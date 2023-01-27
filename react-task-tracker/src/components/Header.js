@@ -15,5 +15,5 @@ Header.defaultProps  = {
 }
 
 
-Header. default
+Header. defaultPr
 export default Header
