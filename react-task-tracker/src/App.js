@@ -4,6 +4,8 @@ import Tasks from "./components/Tasks"
 import AddTask from "./components/AddTask"
 
 function App() {
+
+
   const [tasks, setTasks] = useState(
     [
       {
@@ -46,12 +48,19 @@ function App() {
   }
 
 
+  // Function to add task
+
+  const addTask = (task)=>{
+    console.log(task)
+  }
+
+
 
   return (
 
     <div className="container">
       <Header />
-      <AddTask/>
+      <AddTask onAdd = {addTask}/>
       {tasks.length > 0 ?
         <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleRemainder} />
         : 'No Task To Show'}
