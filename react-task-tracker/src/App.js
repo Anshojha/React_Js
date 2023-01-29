@@ -29,6 +29,15 @@ function App() {
     ]
   )
 
+  // Function to add task
+
+  const addTask = (task) => {
+    const id = Math.floor(Math.random()*10000)+1
+
+    const newTask = {id , ...task}
+    setTasks([...tasks , newTask])
+  }
+
   //Function to delete the task
 
   const deleteTask = (id) => {
@@ -48,11 +57,7 @@ function App() {
   }
 
 
-  // Function to add task
 
-  const addTask = (task)=>{
-    console.log(task)
-  }
 
 
 
@@ -60,7 +65,7 @@ function App() {
 
     <div className="container">
       <Header />
-      <AddTask onAdd = {addTask}/>
+      <AddTask onAdd={addTask} />
       {tasks.length > 0 ?
         <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleRemainder} />
         : 'No Task To Show'}
