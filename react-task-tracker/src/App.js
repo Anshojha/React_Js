@@ -26,6 +26,15 @@ function App() {
     return data
   }
 
+
+     // Fetch data task
+     const fetchTasks = async (id) => {
+      const res = await fetch(`http://localhost:5000/task/${id}`)
+     const data = res.json()
+  
+      return data
+    }
+
   // Function to add task
 
   const addTask = async (task) => {
@@ -38,7 +47,7 @@ function App() {
       body : JSON.stringify(task)
     })
 
-    const data = res.json()
+    const data = await res.json()
 
 
     setTasks([...tasks , data])
@@ -63,12 +72,22 @@ function App() {
 
   // Toggle Remainder
 
-  const toggleRemainder = (id) => {
+  const toggleRemainder = async (id) => {
+    const taskToToggle = await fetchTasks(id)
+    const updTask = {...taskToToggle, remainder:!taskToToggle.toggleRemainder}
+    const res = await fetch(`http://localhost:5000/tasks/${id}`, {
+      method:'PUT',
+      headers:{
+        'Content-type' : 'application/json'
+      },
+      body : JSON.stringify(updTask)
+    })
+    const data = await res.json()
     setTasks(
       tasks.map((task) =>
         task.id === id ? {
           ...task, remainder:
-            !task.remainder
+            data.remainder
         } : task))
   }
 
