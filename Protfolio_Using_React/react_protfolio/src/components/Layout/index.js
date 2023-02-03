@@ -1,7 +1,12 @@
 import './style.scss';
+import Sidebar from './sidebar';
 
 const Layout = ()=> {
-    return <h1>Hello</h1>
+    return (
+        <>
+    <Sidebar/>
+        </>
+    )
 }
 
 
