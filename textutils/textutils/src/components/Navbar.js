@@ -43,18 +43,18 @@ export default function Navbar(props) {
             className="btn btn-outline-success my-2 my-sm-0"
             type="submit"
           >
+            Search
           </button>
         </form>
       </div>
     </nav>
   );
 }
-Navbar.propTypes ={
-    title:PropTypes.string.isRequired,
-    aboutText:PropTypes.string.isRequired
-}
-Navbar.defaultProps ={
-   title:'Ttle is here',
-   aboutText :'About Here'
-
-}
+Navbar.propTypes = {
+  title: PropTypes.string.isRequired,
+  aboutText: PropTypes.string.isRequired,
+};
+Navbar.defaultProps = {
+  title: "Ttle is here",
+  aboutText: "About Here",
+};
