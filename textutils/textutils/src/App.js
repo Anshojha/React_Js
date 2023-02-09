@@ -4,13 +4,13 @@ import TextForm from "./components/TextForm";
 import "./App.css";
 
 function App() {
-
   return (
     <>
-   
-<Navbar title="TextUtils"  aboutText="About TextUtils"/>
-{/* <Navbar /> */}
-     <TextForm/>
+      <Navbar title="TextUtils" aboutText="About TextUtils" />
+      {/* <Navbar /> */}
+      <div className="container my-3">
+        <TextForm  heading = "Enter the text here to analyze"/>
+      </div>
     </>
   );
 }
