@@ -1,13 +1,36 @@
 import React from "react";
 
 export default function About() {
+    const [myStyle , setStyle] = ({
+        color:'white',
+        backgroundColor : 'black'
+    })
+    const [btn]
+
+    const toggleStyle = ()=>{
+        if(myStyle.color==='white'){
+            setStyle({
+                color:'white',
+                backgroundColor : 'black' 
+            })
+        }
+        else{
+            setStyle({
+                color:'black',
+                backgroundColor : 'white' 
+            }) 
+        }
+    }
   return (
-    <div className="container">
+    <div className="container" style={myStyle
+    }>
       <h2 className="my-3">About Us</h2>
       <div class="accordion" id="accordionExample">
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingOne">
             <button
+            style={myStyle
+            }
               class="accordio"
               type="button"
               data-bs-toggle="collapse"
@@ -39,6 +62,8 @@ export default function About() {
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingTwo">
             <button
+            style={myStyle
+            } 
               class="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
@@ -70,6 +95,8 @@ export default function About() {
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingThree">
             <button
+            style={myStyle
+            }
               class="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
@@ -100,7 +127,7 @@ export default function About() {
         </div>
       </div>
       <div className="container">
-        <button type="button" class="btn btn-primary">
+        <button onClick={toggleStyle} type="button"  class="btn btn-primary">
           Dark Mode
         </button>
       </div>
