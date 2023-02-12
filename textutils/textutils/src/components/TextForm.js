@@ -29,6 +29,21 @@ export default function Textform(props) {
         }
         setText( cameText)
     }
+
+
+    // Remove extra spaces
+
+    const handleExtraSpace = ()=>{
+      let newText= text.split(/[ ]+/)
+      setText(newText.join(" "));
+    }
+
+    const handleText = ()=>{
+      var text = document.getElementById("myBox")
+      text.select();
+      text.setSelectionRange(0,9999);
+      navigator.clipboard.writeText(text.value)
+    }
     const [text , setText ] = useState("Enter the text here");
     // text = "New text"
     useState("New Text");
@@ -43,7 +58,7 @@ export default function Textform(props) {
         <textarea
           className="form-control"
           onChange={handleOnChange}
-          id="exampleFormControlTextarea1"
+          id="myBox"
           rows="10" value={text}
         ></textarea>
       </div>
@@ -55,6 +70,12 @@ export default function Textform(props) {
       </button>
       <button className="btn btn-primary mx-2 " onClick={camelChange}>
         Convert To AsDfGhJkL
+      </button>
+      <button className="btn btn-primary mx-2 " onClick={handleText}>
+        Copy
+      </button>
+      <button className="btn btn-primary mx-2 " onClick={handleExtraSpace}>
+      handleExtraSpace 
       </button>
     </div>
     <h3>The summary of your text is here:</h3>
