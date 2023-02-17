@@ -50,12 +50,13 @@ export default function Textform(props) {
     return (
         <>
     <div>
-      <h2>{props.heading}</h2>
+      <h2 className={`form-label text-${(props.mode)==='light'?'dark':'light'}`} >{props.heading}</h2>
       <div className="mb-3">
-        <label htmlFor="myBox" className="form-label">
+        <label htmlFor="myBox" className={`form-label text-${(props.mode)==='dark'?'light':'#042743'}`} >
           Example textarea
         </label>
         <textarea
+          style={{backgroundColor:(props.mode)==='dark'?'grey':'light' , color:(props.mode)==='light'?'black':'white'}}
           className="form-control"
           onChange={handleOnChange}
           id="myBox"
@@ -78,12 +79,12 @@ export default function Textform(props) {
       handleExtraSpace 
       </button>
     </div>
-    <h3>The summary of your text is here:</h3>
-    <p>{text.split(" ").length } words and {text.length} charachters</p>
-    <p>{0.008 * text.split(" ").length } seconds to read</p>
+    <h3 className={`text-${(props.mode)==='light'?'dark':'light'}`}>The summary of your text is here:</h3>
+    <p className={`text-${(props.mode)==='light'?'dark':'light'}`}>{text.split(" ").length } words and {text.length} charachters</p>
+    <p className={`text-${(props.mode)==='light'?'dark':'light'}`} >{0.008 * text.split(" ").length } seconds to read</p>
 
-    <h3>Text Preview</h3>
-    <p>{text}</p>
+    <h3 className={`text-${(props.mode)==='light'?'dark':'light'}`}>Text Preview</h3>
+    <p className={`text-${(props.mode)==='light'?'dark':'light'}`}>{text}</p>
     </>
   );
 }

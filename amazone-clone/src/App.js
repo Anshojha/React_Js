@@ -6,7 +6,7 @@ import { BrowserRouter as Routes, Route } from "react-router-dom";
 // import {Switch } from "react-router-dom";
 function App() {
   return (
-    <>
+  
     <div className="app">
     <Routes>
     
@@ -17,7 +17,7 @@ function App() {
   
     </Routes>
   </div>
-  </>
+
   );
 }
 
