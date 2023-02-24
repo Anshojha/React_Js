@@ -1,21 +1,26 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 
-export default function About() {
+export default function About(props) {
 //   const [myStyle, setStyle] = useState({
 //     color: "black",
 //     backgroundColor: "white",
 //   });
 
+let myStyle = {
+  color: props.mode === 'dark'?'white':' #042743',
+  backgroundColor : props.mode ==='dark'?'rgb(54 103 143)':'white',
+}
+
   return (
     <div className="container"
-    //  style={myStyle}
+    
      >
-      <h2 className="my-3">About Us</h2>
-      <div class="accordion" id="accordionExample">
+      <h2 className="my-3" style={{color: props.mode === 'dark'?'white':' #042743'}}>About Us</h2>
+      <div class="accordion" id="accordionExample"  style={myStyle}>
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingOne">
             <button
-              // style={myStyle}
+              style={myStyle}
               class="accordion-button"
               type="button"
               data-bs-toggle="collapse"
@@ -32,7 +37,7 @@ export default function About() {
             aria-labelledby="headingOne"
             data-bs-parent="#accordionExample"
           >
-            <div class="accordion-body">
+            <div class="accordion-body" style={myStyle}>
               <strong>This is the first item's accordion body.</strong> It is
               shown by default, until the collapse plugin adds the appropriate
               classes that we use to style each element. These classes control
@@ -47,7 +52,7 @@ export default function About() {
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingTwo">
             <button
-            // style={myStyle}
+            style={myStyle}
               class="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
@@ -79,7 +84,7 @@ export default function About() {
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingThree">
             <button
-            // style={myStyle}
+            style={myStyle}
               class="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"

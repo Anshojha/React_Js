@@ -63,25 +63,25 @@ export default function Textform(props) {
           rows="10" value={text}
         ></textarea>
       </div>
-      <button className="btn btn-primary mx-2 my-1" onClick={handlUpClick}>
+      <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handlUpClick}>
         Convert To Uppercase
       </button>
-      <button className="btn btn-primary mx-2 my-1" onClick={handlDownClick}>
+      <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handlDownClick}>
         Convert To Lowercase
       </button>
-      <button className="btn btn-primary mx-2 my-1" onClick={camelChange}>
+      <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={camelChange}>
         Convert To AsDfGhJkL
       </button>
-      <button className="btn btn-primary mx-2 my-1" onClick={handleText}>
+      <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleText}>
         Copy
       </button>
-      <button className="btn btn-primary mx-2 my-1" onClick={handleExtraSpace}>
+      <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleExtraSpace}>
       handleExtraSpace 
       </button>
     </div>
     <h3 className={`text-${(props.mode)==='light'?'dark':'light'}`}>The summary of your text is here:</h3>
     <p className={`text-${(props.mode)==='light'?'dark':'light'}`}>{text.split(" ").filter((ele)=>{return ele.length!==0}).length } words and {text.length} charachters</p>
-    <p className={`text-${(props.mode)==='light'?'dark':'light'}`} >{0.008 * text.split(" ").length } seconds to read</p>
+    <p className={`text-${(props.mode)==='light'?'dark':'light'}`} >{0.008 * text.split(" ").filter((ele)=>{return ele.length!==0}).length } seconds to read</p>
 
     <h3 className={`text-${(props.mode)==='light'?'dark':'light'}`}>Text Preview</h3>
     <p className={`text-${(props.mode)==='light'?'dark':'light'}`}>{text}</p>
