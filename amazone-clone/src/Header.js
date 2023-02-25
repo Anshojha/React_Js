@@ -23,10 +23,11 @@ function Header() {
       </div>
 
       <div className="header_nav">
-        <div className="header_option">
+        <Link to = "logIn">  <div className="header_option">
           <span className="header_optionLineOne">Hello Guest</span>
           <span className="header_optionLineTwo">Sign In</span>
-        </div>
+        </div></Link>
+      
         <div className="header_option">
           <span className="header_optionLineOne">Return</span>
           <span className="header_optionLineTwo">& orders</span>
