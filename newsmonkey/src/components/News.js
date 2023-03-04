@@ -100,29 +100,86 @@ export class News extends Component {
     };
   }
 
-  async componentDidMount(){
+  async componentDidMount() {
     console.log("cmd");
-    let url = "https://newsapi.org/v2/everything?q=tesla&from=2023-02-03&sortBy=publishedAt&apiKey=ee6d572b3b8f4078ac9bb72702c39ff7";
+    let url ="https://newsapi.org/v2/top-headlines?country=in&apiKey=ee6d572b3b8f4078ac9bb72702c39ff7&page=1";
     let data = await fetch(url);
     let parseData = await data.json();
     console.log(parseData);
-    this.setState({articles:parseData.articles})
+    this.setState({ articles: parseData.articles});
   }
+
+
+
+
+  handlePrevBtn = async () => {
+    let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=ee6d572b3b8f4078ac9bb72702c39ff7&page=${
+      this.state.page - 1
+    }`;
+    let data = await fetch(url);
+    let parseData = await data.json();
+    console.log(parseData);
+    this.setState({
+      page: this.state.page - 1,
+      articles: parseData.articles,
+    });
+    console.log("Prev");
+  };
+
+
+
+  handleNextBtn = async () => {
+    console.log("Next");
+    let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=ee6d572b3b8f4078ac9bb72702c39ff7&page=${
+      this.state.page + 1
+    }`;
+    let data = await fetch(url);
+    let parseData = await data.json();
+    console.log(parseData);
+    this.setState({
+      page: this.state.page + 1,
+      articles: parseData.articles,
+    });
+  };
+
+
+
 
   render() {
     return (
       <div className="container my-3 ">
-        <h2>NewsMonkey - Top headline</h2>
+        <h2 className="text-center">NewsMonkey - Top headline</h2>
         <div className="row">
-        {this.state.articles.map((element)=>{ 
-          return  <div className="col-md-4" key={element.url}>
-            <NewsItems
-              title={element.title?element.title.slice(0,40):""}
-              description={element.description?element.description.slice(0,80):""}
-              imageUrl={element.urlToImage}
-              newsUrl={element.url}
-            />
-          </div>})}
+          {this.state.articles.map((element) => {
+            return (
+              <div className="col-md-4" key={element.url}>
+                <NewsItems
+                  title={element.title ? element.title.slice(0, 40) : ""}
+                  description={
+                    element.description ? element.description.slice(0, 80) : ""
+                  }
+                  imageUrl={
+                    element.urlToImage
+                      ? element.urlToImage
+                      : "https://th.bing.com/th/id/R.d69e50d41e8c41af204d60a7ebf64e6e?rik=11eaj38wHdxXRQ&riu=http%3a%2f%2f2.bp.blogspot.com%2f-T_u7AixkhT8%2fTuXA0QKoMpI%2fAAAAAAAAFas%2fBDrVxQK_BLs%2fs1920%2fAudi-cars-wallpaper.JPG&ehk=QjY4VlAHaeE0Nmg%2f%2f1Mx%2fSqTB2zkCRAnswcForbGtZo%3d&risl=&pid=ImgRaw&r=0"
+                  }
+                  newsUrl={element.url}
+                />
+              </div>
+            );
+          })}
+          <div className="container d-flex justify-content-between">
+            <button
+              disabled={this.state.page <= 1}
+              className="btn btn-dark"
+              onClick={this.handlePrevBtn}
+            >
+              &larr; Previous
+            </button>
+            <button className="btn btn-dark" onClick={this.handleNextBtn}>
+              Next &rarr;
+            </button>
+          </div>
         </div>
       </div>
     );
