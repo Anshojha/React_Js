@@ -1,6 +1,6 @@
 import "./App.css";
 
-import { Router, Routes, Route } from "react-router-dom";
+import {BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import React, { Component } from "react";
 import NavBar from "./components/NavBar";
@@ -16,7 +16,7 @@ export default class App extends Component {
           <Routes>
             <Route
               exact
-              path="/"
+              path="/about"
               element={<News pageSize={6} country="in" category="sports" />}
             />
             
