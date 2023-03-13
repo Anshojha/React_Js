@@ -8,7 +8,7 @@ import 'firebase/compat/auth';
 import { auth } from "./firebase";
 
 function Header() {
-  const [{basket, user} , dispatch] = useStateValue();
+  const [{basket, user} ] = useStateValue();
   const handleAuthentication = ()=>{
        if(user){
         auth.signOut();
@@ -30,7 +30,7 @@ function Header() {
 
       <div className="header_nav" onClick={handleAuthentication}>
         <Link to ={!user&& '/login'}>  <div className="header_option">
-          <span className="header_optionLineOne">Hello Guest</span>
+          <span className="header_optionLineOne">Hello {!user?"Guest":user.email}</span>
           <span className="header_optionLineTwo">{user?"SignOut":"signIn"}</span>
         </div></Link>
       
