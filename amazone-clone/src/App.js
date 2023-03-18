@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Checkout from "./Checkout";
 import 'firebase/compat/auth';
 import { useStateValue } from "./StateProvider";
+import Payment from "./Payment";
 function App() {
  const [{}, dispatch] = useStateValue();
 
@@ -39,6 +40,7 @@ function App() {
           <Route exact path="/login" element={<Login/>} ></Route>
           <Route exact path="/" element={<>  <Header /> <Home/> </>}></Route>
           <Route exact path="/checkout" element={ <><Header /> <Checkout/></> }></Route>
+          <Route exact path="/payment" element={<>  <Header /> <Payment/> </>} ></Route>
         </Routes>
       </div>
     </Router>
