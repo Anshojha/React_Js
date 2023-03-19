@@ -9,6 +9,9 @@ import Checkout from "./Checkout";
 import 'firebase/compat/auth';
 import { useStateValue } from "./StateProvider";
 import Payment from "./Payment";
+import {loadStripe} from "@stripe/stripe-js";
+import {Element} from "@stripe/react-stripe-js";
+const promise = loadStripe('pk_test_51Mn4P7SAl5gguNQ4TMivZNahFTYZPjmh4WWyjiUFKRGPoiGjtPvGejfKvAMm6VYzPQno8jN9wsPos2CSauHK6z8q00QemiUUHN');
 function App() {
  const [{}, dispatch] = useStateValue();
 
@@ -32,6 +35,7 @@ function App() {
 
         }
       })
+      //eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
   return (
     <Router>
@@ -40,7 +44,12 @@ function App() {
           <Route exact path="/login" element={<Login/>} ></Route>
           <Route exact path="/" element={<>  <Header /> <Home/> </>}></Route>
           <Route exact path="/checkout" element={ <><Header /> <Checkout/></> }></Route>
-          <Route exact path="/payment" element={<>  <Header /> <Payment/> </>} ></Route>
+          <Route exact path="/payment" element={<>  <Header /> <Payment/> 
+          <Element stripe = {promise}>
+          <Payment/>
+
+          </Element>
+          </>} ></Route>
         </Routes>
       </div>
     </Router>
