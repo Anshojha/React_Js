@@ -34,7 +34,7 @@ function Login() {
   return (
    
     <div className='login'>
-        <Link to='/'><img className='login__logo' src="https://www.demandsphere.com/wp-content/uploads/2018/02/Amazon_logo.png" alt="" srcset="" /></Link>
+        <Link to='/'><img className='login__logo' src="https://www.demandsphere.com/wp-content/uploads/2018/02/Amazon_logo.png" alt="" scrSet="" /></Link>
         <div className="login__container">
           <h1>Sign-In</h1>
           <form action="">
