@@ -15,11 +15,9 @@ export default class App extends Component {
 
           <Routes>
             <Route
-              exact
-              path="/about"
-              element={<News pageSize={6} country="in" category="sports" />}
+              exact path="/about"
+              element={<News />}
             />
-            
           </Routes>
         </Router>
       </div>

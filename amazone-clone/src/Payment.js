@@ -7,8 +7,8 @@ import {CardElement , useStripe , useElements} from "@stripe/react-stripe-js";
 function Payment() {
   const [{ basket, user }] = useStateValue();
 
-  const stripe = useStripe();
-  const elements = useElements();
+  // const stripe = useStripe();
+  // const elements = useElements();
   return (
     <div className="payment">
       <div className="payment__container">
