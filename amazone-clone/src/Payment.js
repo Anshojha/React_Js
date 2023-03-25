@@ -19,6 +19,17 @@ function Payment() {
 
   useEffect(()=>{
   // it will generate the special secret key for the customer to pay the money
+
+const getClientSecret = async () =>{
+  const response = axios({
+    method : 'post',
+    // Stripe except the total in currencies  subunit
+    url : `/payments/create?total=${getBasketTotal(basket)*100}`
+  });
+  setClintSecret(response.data.clientSecret);
+}
+
+getClientSecret();
   },[basket])
 
 
@@ -26,7 +37,11 @@ function Payment() {
     // will do the all stripe stuff
     event.preventDefault();
     setProcessing(true);
-    // const payload =await stripe
+    const payload =await stripe.confirmCardPayment(clientSecret , {
+      payment_method:{
+        card: elements.getElement(CardElement)
+      }
+    })
   };
   const handleChange = (event) => {
     setDisabled(event.empty);
