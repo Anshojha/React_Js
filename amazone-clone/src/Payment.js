@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate} from "react-router-dom";
 import CheckoutProduct from "./CheckoutProduct";
 import "./Payment.css";
 import { useStateValue } from "./StateProvider";
@@ -7,6 +7,7 @@ import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { Element } from "@stripe/react-stripe-js";
 import CurrencyFormat from "react-currency-format";
 import { getBasketTotal } from "./reducer";
+import axios from "./axios";
 function Payment() {
   const [{ basket, user }] = useStateValue();
   const [succeeded, setSucceeded] = useState(false);
@@ -41,6 +42,13 @@ getClientSecret();
       payment_method:{
         card: elements.getElement(CardElement)
       }
+    }).then(({paymentIntent})=>{
+      // paymentIntent = payment confirmation
+
+      setSucceeded(true);
+      setError(null);
+      setProcessing(false);
+      navigate('/orders');
     })
   };
   const handleChange = (event) => {
@@ -49,6 +57,7 @@ getClientSecret();
   };
   const stripe = useStripe();
   const elements = useElements();
+  const navigate = useNavigate();
   return (
     <div className="payment">
       <div className="payment__container">
