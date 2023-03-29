@@ -33,14 +33,15 @@ const getClientSecret = async () =>{
 getClientSecret();
   },[basket])
 
+  console.log("The secret is >>" , clintSecret);
 
   const handleSubmit = async (event) => {
     // will do the all stripe stuff
     event.preventDefault();
     setProcessing(true);
-    const payload =await stripe.confirmCardPayment(clientSecret , {
+    const payload =await stripe.confirmCardPayment(clintSecret , {
       payment_method:{
-        card: elements.getElement(CardElement)
+        card: elements.getElement(CardElement),
       }
     }).then(({paymentIntent})=>{
       // paymentIntent = payment confirmation
