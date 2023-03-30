@@ -9,8 +9,9 @@ import Checkout from "./Checkout";
 import 'firebase/compat/auth';
 import { useStateValue } from "./StateProvider";
 import Payment from "./Payment";
+import Orders from './Orders';
 import {loadStripe} from "@stripe/stripe-js";
-  import {Elements} from "@stripe/react-stripe-js";
+import {Elements} from "@stripe/react-stripe-js";
 const promise = loadStripe('pk_test_51Mn4P7SAl5gguNQ4TMivZNahFTYZPjmh4WWyjiUFKRGPoiGjtPvGejfKvAMm6VYzPQno8jN9wsPos2CSauHK6z8q00QemiUUHN');
 function App() {
  const [{basket}, dispatch] = useStateValue();
@@ -41,12 +42,13 @@ function App() {
     <Router>
       <div className="app">
         <Routes>
+          <Route exact path="/orders" element={<Orders/>} ></Route>
           <Route exact path="/login" element={<Login/>} ></Route>
           <Route exact path="/" element={<>  <Header /> <Home/> </>}></Route>
           <Route exact path="/checkout" element={ <><Header /> <Checkout/></> }></Route>
           <Route exact path="/payment" element={<>  <Header /> 
-          <Elements stripe={promise}>
-          <Payment/> 
+          <Elements stripe={promise}>         
+          <Payment/>
           </Elements>
           </>} ></Route>
         </Routes>

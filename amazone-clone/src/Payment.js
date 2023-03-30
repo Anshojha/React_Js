@@ -4,7 +4,7 @@ import CheckoutProduct from "./CheckoutProduct";
 import "./Payment.css";
 import { useStateValue } from "./StateProvider";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
-import { Element } from "@stripe/react-stripe-js";
+import { Element} from "@stripe/react-stripe-js";
 import CurrencyFormat from "react-currency-format";
 import { getBasketTotal } from "./reducer";
 import axios from "./axios";
@@ -49,6 +49,9 @@ getClientSecret();
       setSucceeded(true);
       setError(null);
       setProcessing(false);
+      dispatch({
+        type : "EMPTY BASKET"
+      })
       navigate('/orders');
     })
   };
