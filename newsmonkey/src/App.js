@@ -12,12 +12,13 @@ export default class App extends Component {
       <div>
         <Router>
           <NavBar />
-
+          <News/>
           <Routes>
-            <Route
-              exact path="/about"
+            {/* <Route
+              exact path="/"
               element={<News />}
-            />
+            /> */}
+           
           </Routes>
         </Router>
       </div>

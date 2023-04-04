@@ -19,9 +19,9 @@ app.use(express.json());
 
 app.get('/', (request , response)=> response.status(200).send('Jai Shree Ram'))
 
-app.post('/payments/create' , async (response , request)=>{
-
-    const total = request.query.total;
+app.post('/payments/create' , async (request , response)=>{
+    console.log("<-Yeah I am running->");
+    const total = request.query.total;  
     console.log("The payment is Boom!!" , total);
 
     const paymentIntent = await stripe.paymentIntents.create({
@@ -29,7 +29,7 @@ app.post('/payments/create' , async (response , request)=>{
         currency : "usd",
     });
 
-
+ // OK -> Created
      response.status(201).send({
         clintSecret : paymentIntent.client_secret,
      })
