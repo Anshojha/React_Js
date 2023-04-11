@@ -1,20 +1,14 @@
-import React, { Component } from "react";
+import React, {useEffect,useState} from "react";
 
 import NewsItems from "./NewsItems";
 import Spinner from "./Spinner";
 import PropTypes from 'prop-types'
-export class News extends Component {
-  static defalutProps ={
-    country : 'in',
-    pageSize :6,
-    category:'general'
-  }
+const  News = ()=> {
+const [articels , setArticles] = useState([])
+const [loading , setLoading] = useState(true)
+const [page , setPage] = useState(1)
+const [totalResults , setTotalResults] = useState(0)
 
-  static propTypes = {
-      country: PropTypes.string,
-      pageSize: PropTypes.number,
-      category:PropTypes.string,
-  }
   
   articles = [
     {
@@ -103,28 +97,18 @@ export class News extends Component {
         "Feb 1 (Reuters) - The South Africa women's cricket team have given all-rounder Marizanne Kapp compassionate leave after her wife Dane van Niekerk was dropped from the Women's Twenty20 World Cup squad… [+908 chars]",
     },
   ];
-  constructor() {
-    super();
-    console.log("Hello I am from the News component");
-
-    this.state = {
-      articles: [],
-      loading: false,
-      page:1,
-    };
-  }
-
-  async componentDidMount() {
-    console.log("cmd");
-    console.log("I am working");
-    let url =`https://newsapi.org/v2/everything?q=tesla&from=2023-02-22&sortBy=publishedAt&apiKey=ee6d572b3b8f4078ac9bb72702c39ff7`;
-    let data = await fetch(url);
-    let parseData = await data.json();
-    console.log(parseData);
-    this.setState({ articles: parseData.articles});
-  }
+ 
 
 
+useEffect(async ()=>{
+  console.log("cmd");
+  console.log("I am working");
+  let url =`https://newsapi.org/v2/everything?q=tesla&from=2023-02-22&sortBy=publishedAt&apiKey=ee6d572b3b8f4078ac9bb72702c39ff7`;
+  let data = await fetch(url);
+  let parseData = await data.json();
+  console.log(parseData);
+  this.setState({ articles: parseData.articles});
+})
 
 
   handlePrevBtn = async () => {
@@ -155,7 +139,7 @@ export class News extends Component {
   
   };
 
-  render() {
+ 
     return (
       <div className="container my-3 ">
         
@@ -196,6 +180,18 @@ export class News extends Component {
       </div>
     );
   }
+
+
+News.defalutProps ={
+  country : 'in',
+  pageSize :6,
+  category:'general'
+}
+
+News.propTypes = {
+    country: PropTypes.string,
+    pageSize: PropTypes.number,
+    category:PropTypes.string,
 }
 
 export default News;
