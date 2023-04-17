@@ -12,7 +12,7 @@ const mongoose = require('mongoose');
             type : String,
             unique:true
         },
-        tag : {
+        password: {
             type : String
         },
         
