@@ -17,5 +17,5 @@ app.use('/api/auth', require('./routes/auth.js'))
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
-  console.log("Succefulu Connected");
+  console.log("Succefully Connected");
 })
