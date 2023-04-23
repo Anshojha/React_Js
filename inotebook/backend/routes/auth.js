@@ -6,7 +6,7 @@ const bcrypt = require("bcryptjs");
 const { Await } = require("react-router-dom");
 const jwt = require("jsonwebtoken");
 JWT_SECRET = "JaiShreeRam$";
-var fetchuser = require("../middleware/fetchuser");
+const fetchuser = require("../middleware/fetchuser");
 
 // Create a User using post "api/auth/createUser"  No login required
 router.post(
@@ -100,7 +100,7 @@ router.post(
 
 router.post("/getuser", fetchuser, async (req, res) => {
   try {
-    userId = req.user.id;
+    userId = req.user.id;3
     const user = await User.findById(userId).select("-password");
     res.send(user);
   } catch (error) {
