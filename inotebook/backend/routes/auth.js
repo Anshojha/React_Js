@@ -96,11 +96,11 @@ router.post(
   }
 );
 
-// Router 3 this is for to get the logged in user details POST "/api/auth/getuser"
+// Router 3 this is for to get the logged in user details POST "/api/auth/getuser logon requitred"
 
 router.post("/getuser", fetchuser, async (req, res) => {
   try {
-    userId = req.user.id;3
+    userId = req.user.id;
     const user = await User.findById(userId).select("-password");
     res.send(user);
   } catch (error) {

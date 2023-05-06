@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
     const { Schema } = mongoose;
-    const UserSchema = new Schema({
+    const NoteSchema = new Schema({
+        user : {
+            type : mongoose.Schema.Types.ObjectId,
+            ref : 'user'
+        },
         title:{
             type : String,
             require : true
@@ -8,14 +12,9 @@ const mongoose = require('mongoose');
         description :{
             type : String
         },
-        email :{
-            type : String,
-            unique:true
-        },
-        password: {
+        tag :{
             type : String
-        },
-        
+        },  
         date : {
             type : Date,
             default : Date.now
@@ -24,4 +23,4 @@ const mongoose = require('mongoose');
     });
 
 
-module.exports = mongoose.model('user', UserSchema);
+module.exports = mongoose.model('note', NoteSchema);

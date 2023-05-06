@@ -6,7 +6,7 @@ const fetchuser = (req ,res , next)=>{
 
 const token = req.header('auth-token');
 if(!token){
-    res.send(401).send({error : "Please authenticate using right token"});
+    res.send(401).send({error : "Please authenticate using valid token"});
 }
 try {
     const data = jwt.verify(token , JWT_SECRET)
