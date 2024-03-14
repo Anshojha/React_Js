@@ -10,7 +10,7 @@ function InputBox({
     selctCurrency = "usd1",
     amountDisabled = false,
     currencyDisable = false,
-    className = ""
+    className = ""            
 }) 
 {
     const amountUniquieId = useId();
@@ -26,7 +26,8 @@ function InputBox({
                     disabled={amountDisabled}
                     value={amount}
                     onChange={(e) => onAmontChange &&
-                        onAmontChange(Number(e.target.value))}
+                    onAmontChange(Number(e.target.value))}
+                    
                 />
             </div>
             <div className="w-1/2 flex flex-wrap justify-end text-right">
