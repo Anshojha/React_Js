@@ -1,11 +1,12 @@
+
 import './App.css'
-import Navbar from './Navbar'
 
 function App() {
 
+console.log(import.meta.env.VITE_APPWRITE_URL);
   return (
     <>
-     <Navbar/>
+     <h1>A Blog with appwrite</h1>
     </>
   )
 }
