@@ -1,5 +1,5 @@
-
-
+import {Client , Account , ID} from "appwrite"
+import conf from '../conf/conf'
 export class AuthService {
   client = new Client();
 
@@ -12,7 +12,7 @@ export class AuthService {
     this.account = new Account(this.client);
   }
 
-  async createAccount({ usre, email, password }) {
+  async createAccount({ user, email, password }) {
     try {
       const userAccount = await this.account.create(
         ID.unique(),

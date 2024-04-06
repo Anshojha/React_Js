@@ -15,14 +15,15 @@ function App() {
       if(userData){
         dispatch(login(userData));
       }
+      else{
+        dispatch(logout)
+      }
     })
-    .finally()
+    .finally(() => setLoading(false))
   },[]);
-  return (
-    <>
-     <h1>A Blog with appwrite</h1>
-    </>
-  )
+  return !loading ? (
+    <div className='min-h-screen flex  flex-wrap'></div>
+  ) : null
 }
 
 export default App
