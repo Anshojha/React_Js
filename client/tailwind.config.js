@@ -4,14 +4,14 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  theme: {
-    extend: {
-      fontFamily: {
-        HeadingFont: ["Yeseva One", "serif"],
-        BodyFont: ["Josefin Sans", "sans-serif"],
+    theme: {
+      extend: {
+        fontFamily: {
+          HeadingFont: ["Yeseva One", "serif"],
+          BodyFont: ["Josefin Sans", "sans-serif"],
+        },
       },
     },
-  },
   plugins: [],
 }
 

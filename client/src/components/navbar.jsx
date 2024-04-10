@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { MdMenu } from 'react-icons/md';
+  import { MdMenu } from 'react-icons/md';
 import Logo from '../assets/logo.png';
 
 const Navbar = () => {
