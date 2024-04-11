@@ -10,6 +10,7 @@ function App() {
   const [loading, setLoading] = useState(false)
   const dispatch = useDispatch()
 
+  
   useEffect(() => {
     authService.getCurrentUser()
       .then((userData) => {

@@ -8,10 +8,10 @@ function Home() {
       <div className='md:pt-[200px] flex flex-col items-center justify-between h-screen w-full'>
         <div className='font-headingFont space-y-4 flex flex-col items-center justify-center font-extrabold'>
           <p className='md:text-5xl flex items-center justify-center px-4 text-lg text-justify text-black'>
-            Crafting Your Digital Destiny with
+          Sapiente maiores nemo libero, qui facilis corporis. Laborum, ea.
           </p>
           <p className='md:text-5xl flex items-center justify-center px-4 text-lg text-justify text-black text-break'>
-            Enhancing your abilities with our customised solutions
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
           </p>
         </div>
         <div className='"flex items-center justify-center  md:mt-[10%] mt-[20%]'>
