@@ -54,7 +54,7 @@ function Login() {
                 label = "Email: "
                 placeholder = "Enter your email"
                 type ="email"
-                {...register("email") , {
+                {...register("email") ,{
                     required : true,
                     validate : {
                         matchPatern : (value) => /^([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}$/.
