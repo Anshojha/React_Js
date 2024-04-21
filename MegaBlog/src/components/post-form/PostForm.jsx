@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 
 
 
-function PostForm({post}) {
+export default function PostForm ({post}) {
     const { register, handleSubmit, watch, setValue, control, getValues } = useForm({
         defaultValues:{
             title: post?.title || "",
@@ -85,7 +85,7 @@ function PostForm({post}) {
         }
     },[watch , slugTransform , setValue])
    
-  return  return (
+  return  (
     <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
         <div className="w-2/3 px-2">
             <Input
@@ -136,4 +136,4 @@ function PostForm({post}) {
 )
 }
 
-export default PostForm
+
