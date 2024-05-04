@@ -123,11 +123,11 @@ export default function PostForm ({post}) {
                 </div>
             )}
             <Select
-                options={["active", "inactive"]}
-                label="Status"
-                className="mb-4"
-                {...register("status", { required: true })}
-            />
+                    options={["active", "inactive"]}
+                    label="Status"
+                    className="mb-4"
+                    {...register("status", { required: true })}
+                />
             <Button type="submit" bgColor={post ? "bg-green-500" : undefined} className="w-full">
                 {post ? "Update" : "Submit"}
             </Button>

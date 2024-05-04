@@ -1,5 +1,5 @@
-import { deflate } from "zlib";
-import { Client, Account, ID, Query } from "appwrite";
+
+import { Client, Account, ID, Query,Storage } from "appwrite";
 import conf from "../conf/conf";
 
 export class Service {
@@ -11,7 +11,7 @@ export class Service {
       .setEndpoint(conf.appWriteUrl)
       .setProject(conf.appWriteProjectId);
     this.account = new Account(this.client);
-    this.account = new Storag(this.client);
+    this.account = new Storage(this.client);
   }
 
   async createPost({ title, slug, content, featuredImage, status, userId }) {
@@ -78,18 +78,20 @@ export class Service {
     }
   }
 
-  async getPosts(queries = [Query.equal("status", "active")]) {
+  async getPosts(queries = [Query.equal("status", "active")]){
     try {
-      return await this.databases.listDocuments(
-        conf.appWriteDatabaseId,
-        conf.appWriteCollectionId,
-        queries
-      );
+        return await this.databases.listDocuments(
+            conf.appwriteDatabaseId,
+            conf.appwriteCollectionId,
+            queries,
+            
+
+        )
     } catch (error) {
-      console.log("Appwrite config  getPosts :: error", error);
-      return false;
+        console.log("Appwrite serive :: getPosts :: error", error);
+        return false
     }
-  }
+}
 
   async uploadFile(file) {
     try {
