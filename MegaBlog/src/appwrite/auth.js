@@ -8,8 +8,8 @@ export class AuthService {
 
     constructor() {
         this.client
-            .setEndpoint(conf.appWriteUrl)
-            .setProject(conf.appWriteProjectId);
+            .setEndpoint(conf.appwriteUrl)
+            .setProject(conf.appwriteProjectId);
         this.account = new Account(this.client);
             
     }
@@ -18,6 +18,7 @@ export class AuthService {
         try {
             const userAccount = await this.account.create(ID.unique(), email, password, name);
             if (userAccount) {
+                // call another method
                 return this.login({email, password});
             } else {
                return  userAccount;
@@ -58,3 +59,4 @@ export class AuthService {
 const authService = new AuthService();
 
 export default authService
+
