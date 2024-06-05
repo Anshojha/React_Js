@@ -10,7 +10,7 @@ function App() {
      <Navbar/>
      {/* <div className='w-full h-screen bg-indigo-500'></div> */}
      <Home/>
-     <About/>
+     {/* <About/> */}
     </>
   )
 }

@@ -25,7 +25,7 @@ const navbar = () => {
   }, [])
 
   return (
-    <nav className={`flex w-full bg-white items-center font-HeadingFont justify-between flex-shrink p-6 fixed font-HeadingFont z-30 top-0 ${isScrolled ? 'bg-white backdrop-blur-[10px] bg-opacity-65 '
+    <nav className={`flex w-full bg-white items-center shadow-md font-HeadingFont justify-between flex-shrink p-6 fixed z-30 top-0 ${isScrolled ? 'bg-white backdrop-blur-[10px] bg-opacity-65 '
         : 'bg-white backdrop-blur-[10px]'
       }`}>
       <div className='flex items-center flex-shrink-0 mr-6 text-white'>
