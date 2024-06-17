@@ -21,12 +21,28 @@ function Home() {
           </div>
         
       </div>
-      <div className='w-1/2 h-full'> 
-        <div className='h-full w-full bg-slate-200 flex flex-col  overflow-hidden'>
+      <div className='w-1/2 h-full flex flex-row'> 
+        <div className='h-full w-full flex flex-col  overflow-hidden'>
             <div className='h-[210px] w-[210px] '>
                 <img className='rounded-2xl mt-4 mb-4' src="https://d1hdnpfpyy58x9.cloudfront.net/context/frontend/common/header_hero_masonry/desktop/images/header_hero_masonry_01.jpg,w_210,h_295,c_1,q_80,fd_1,e_.webp" alt="" />
+                <img className='rounded-2xl mt-4 mb-4' src="https://d1hdnpfpyy58x9.cloudfront.net/context/frontend/common/header_hero_masonry/desktop/images/header_hero_masonry_02.jpg,w_210,h_295,c_1,q_80,fd_1,e_.webp" alt="" />
+                <img className='rounded-2xl mt-4 mb-4' src="https://d1hdnpfpyy58x9.cloudfront.net/context/frontend/common/header_hero_masonry/desktop/images/header_hero_masonry_03.jpg,w_210,h_325,c_1,q_80,fd_1,e_.webp" alt="" />
                 <img className='rounded-2xl mt-4 mb-4' src="https://d1hdnpfpyy58x9.cloudfront.net/context/frontend/common/header_hero_masonry/desktop/images/header_hero_masonry_01.jpg,w_210,h_295,c_1,q_80,fd_1,e_.webp" alt="" />
+            </div>
+        </div>
+        <div className='h-full w-full flex flex-col  overflow-hidden'>
+            <div className='h-[210px] w-[210px] '>
+                <img className='rounded-2xl mt-4 mb-4' src="https://d1hdnpfpyy58x9.cloudfront.net/context/frontend/common/header_hero_masonry/desktop/images/header_hero_masonry_04.jpg,w_210,h_352,c_1,q_80,fd_1,e_.webp" alt="" />
+                <img className='rounded-2xl mt-4 mb-4' src="https://d1hdnpfpyy58x9.cloudfront.net/context/frontend/common/header_hero_masonry/desktop/images/header_hero_masonry_05.jpg,w_210,h_240,c_1,q_80,fd_1,e_.webp" alt="" />
+                <img className='rounded-2xl mt-4 mb-4' src="https://d1hdnpfpyy58x9.cloudfront.net/context/frontend/common/header_hero_masonry/desktop/images/header_hero_masonry_06.jpg,w_210,h_240,c_1,q_80,fd_1,e_.webp" alt="" />
                 <img className='rounded-2xl mt-4 mb-4' src="https://d1hdnpfpyy58x9.cloudfront.net/context/frontend/common/header_hero_masonry/desktop/images/header_hero_masonry_01.jpg,w_210,h_295,c_1,q_80,fd_1,e_.webp" alt="" />
+            </div>
+        </div>
+        <div className='h-full w-full flex flex-col  overflow-hidden'>
+            <div className='h-[210px] w-[210px] '>
+                <img className='rounded-2xl mt-4 mb-4' src="https://d1hdnpfpyy58x9.cloudfront.net/context/frontend/common/header_hero_masonry/desktop/images/header_hero_masonry_09.jpg,w_210,h_280,c_1,q_80,fd_1,e_.webp" alt="" />
+                <img className='rounded-2xl mt-4 mb-4' src="https://d1hdnpfpyy58x9.cloudfront.net/context/frontend/common/header_hero_masonry/desktop/images/header_hero_masonry_07.jpg,w_210,h_309,c_1,q_80,fd_1,e_.webp" alt="" />
+                <img className='rounded-2xl mt-4 mb-4' src="https://d1hdnpfpyy58x9.cloudfront.net/context/frontend/common/header_hero_masonry/desktop/images/header_hero_masonry_08.jpg,w_210,h_315,c_1,q_80,fd_1,e_.webp" alt="" />
                 <img className='rounded-2xl mt-4 mb-4' src="https://d1hdnpfpyy58x9.cloudfront.net/context/frontend/common/header_hero_masonry/desktop/images/header_hero_masonry_01.jpg,w_210,h_295,c_1,q_80,fd_1,e_.webp" alt="" />
             </div>
         </div>
